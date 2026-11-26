@@ -9,7 +9,7 @@ interface ShareModalProps {
 
 function getInitialPublicOrigin(): string {
   if (typeof window === 'undefined') return '';
-  return window.location.origin;
+return new URL(import.meta.env.BASE_URL, window.location.origin).href;
 }
 
 function isLocalOrPrivateOrigin(url: string): boolean {
